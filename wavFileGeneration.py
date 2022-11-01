@@ -34,10 +34,10 @@ for i in range(0,len(metaDataList)):
     if (metaDataList['category'][i]=='A'):
         labelDataList['Audio_Label'][i]=0
         labelDataList['Video_Label'][i]=0
-    if (metaDataList['category'][i]=='C'):
+    elif (metaDataList['category'][i]=='C'):
         labelDataList['Audio_Label'][i]=0
         labelDataList['Video_Label'][i]=1
-    if (metaDataList['category'][i]=='B'):
+    elif (metaDataList['category'][i]=='B'):
         labelDataList['Audio_Label'][i]=1
         labelDataList['Video_Label'][i]=0
     else:
