@@ -32,17 +32,17 @@ labelDataList['Audio_Label']=''
 labelDataList['Video_Label']=''
 for i in range(0,len(metaDataList)):
     if (metaDataList['category'][i]=='A'):
-        labelDataList['Audio_Label']=0
-        labelDataList['Video_Label']=0
+        labelDataList['Audio_Label'][i]=0
+        labelDataList['Video_Label'][i]=0
     if (metaDataList['category'][i]=='C'):
-        labelDataList['Audio_Label']=0
-        labelDataList['Video_Label']=1
+        labelDataList['Audio_Label'][i]=0
+        labelDataList['Video_Label'][i]=1
     if (metaDataList['category'][i]=='B'):
-        labelDataList['Audio_Label']=1
-        labelDataList['Video_Label']=0
+        labelDataList['Audio_Label'][i]=1
+        labelDataList['Video_Label'][i]=0
     else:
-        labelDataList['Audio_Label']=1
-        labelDataList['Video_Label']=1
+        labelDataList['Audio_Label'][i]=1
+        labelDataList['Video_Label'][i]=1
         
 labelDataList['wavLocation']=''
 labelDataList['fullPath']='/code/dataset/'+labelDataList['Unnamed: 9']+'/'+labelDataList['path']
