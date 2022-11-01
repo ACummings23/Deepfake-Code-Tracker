@@ -19,7 +19,7 @@ import pandas as pd
 
 
 
-#load attached metadata file that contains category of each mp4 file,file location,file name, and an empty column for labeling target value, file id
+#load attached metadata file that contains category of each mp4 file,file location,file name, file id
 ####A>Real Video Real Audio
 ####B>Real Video Fake Audio
 ####C>Fake Video Real Audio
@@ -27,11 +27,25 @@ import pandas as pd
 metaDataList=pd.read_csv("//code//dataset//FakeAVCeleb//meta_data.csv")
 labelDataList=metaDataList
 #set labels for audio
-for i in range(0,len(metaDataList)-1):
-    if (metaDataList['category'][i]=='A') or (metaDataList['category'][i]=='C'):
-        labelDataList['target1'][i]=0
+labelDataList=metaDataList
+labelDataList['Audio_Label']=''
+labelDataList['Video_Label']=''
+for i in range(0,len(metaDataList)):
+    if (metaDataList['category'][i]=='A'):
+        labelDataList['Audio_Label']=0
+        labelDataList['Video_Label']=0
+    if (metaDataList['category'][i]=='C'):
+        labelDataList['Audio_Label']=0
+        labelDataList['Video_Label']=1
+    if (metaDataList['category'][i]=='B'):
+        labelDataList['Audio_Label']=1
+        labelDataList['Video_Label']=0
     else:
-        labelDataList['target1'][i]=1
+        labelDataList['Audio_Label']=1
+        labelDataList['Video_Label']=1
+        
+labelDataList['wavLocation']=''
+labelDataList['fullPath']='/code/dataset/'+labelDataList['Unnamed: 9']+'/'+labelDataList['path']
 #create new columns to be attach address of wavLocation, and create new column that merges two columns to get the complete path that our wavwriter function will access     
 labelDataList['wavLocation']=''
 labelDataList['fullPath']='/code/dataset/'+labelDataList['Unnamed: 9']+'/'+labelDataList['path']
