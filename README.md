@@ -30,4 +30,4 @@ new files:<br />
 -validationSet-file showing several validation splits used throughout project<br />
 -training and validation data-most recent iteration of validation and training sets in.csv format used in models<br />
 -efficientNetB2-model updated with #2 validation data split: further iteration on this model not used as pretrained accuracy unaffected by any dataset change(99%)<br />
-# Deepfake
+
