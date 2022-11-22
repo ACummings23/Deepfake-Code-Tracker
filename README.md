@@ -22,7 +22,7 @@ The goal of this project is to create a convolutional neural network model for d
 
 
 
-# Deepfake-Code-Tracker#
+# Deepfake-Code-Tracker
 Repo containing scripts I wrote during Deepfake Audio Project-Will update weekly with new code <br />
 last updated-(11/22/2022)<br />
 new files:<br />
